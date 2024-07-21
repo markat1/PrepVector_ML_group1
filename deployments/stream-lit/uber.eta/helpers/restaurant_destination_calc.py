@@ -31,7 +31,4 @@ def estimate_time_by_estimators(total_distance: float,
 
     average_speed = average_speed_by_distance_and_time(specific_data['distance_km'].sum(), specific_data['Time_taken(min)'].sum())
 
-    print(total_distance)
-    print(average_speed)
-
     return total_distance / average_speed
