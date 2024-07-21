@@ -3,7 +3,7 @@ from helpers.restaurant_destination_calc import estimate_time_by_estimators
 
 st.header("Calculate amount of time it takes to deliver food")
 
-st.text_input("Distance", key="distance", value=1000)
+st.text_input("Distance", key="distance", value=20)
 
 distance = st.session_state.distance
 
@@ -25,4 +25,3 @@ traffic_condition = st.selectbox(
 
 if st.button("Submit",type="primary"):
     st.write(estimate_time_by_estimators(float(distance), chosen_vehicle, int(vehicle_condition), weather_condition, traffic_condition))
-    # st.write(estimate_time_by_estimators(float(distance)))
