@@ -1,5 +1,5 @@
 import streamlit as st
-from helpers.haversine import calc_dist_with_haversine
+from helpers.restaurant_destination_calc import estimate_time_by_estimators
 
 st.header("Calculate amount of time it takes to deliver food")
 
@@ -24,4 +24,5 @@ traffic_condition = st.selectbox(
      ['Low','Medium','High', 'Jam'])
 
 if st.button("Submit",type="primary"):
-    st.write("Test")
+    st.write(estimate_time_by_estimators(float(distance), chosen_vehicle, int(vehicle_condition), weather_condition, traffic_condition))
+    # st.write(estimate_time_by_estimators(float(distance)))
